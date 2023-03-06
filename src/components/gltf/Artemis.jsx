@@ -4,16 +4,30 @@ Command: npx gltfjsx@6.1.3 artemis.glb artemis
 */
 
 import React, { useRef } from 'react'
+import { useFrame } from "@react-three/fiber"
 import { useGLTF } from '@react-three/drei'
 
 export default function Artemis(props) {
+
   const { nodes, materials } = useGLTF('/artemis.glb')
+  const group = useRef()
+  const baza =useRef()
+  const aripi = useRef()
+  useFrame(() => {
+    if (!group.current) {
+        return;
+    }
+    group.current.rotation.z += 0.009;
+    // baza.current.rotation.z += 0.009;
+    // aripi.current.rotation.z += 0.009;
+
+})
   return (
-    <group {...props} dispose={null} scale={4}>
-      <group position={[2.59, 7.05, -10.66]} rotation={[-0.97, -0.38, -0.18]} scale={10}>
+    <group ref={group}{...props} dispose={null} scale={4}>
+      <group ref={baza} position={[2.59, 7.05, -10.66]} rotation={[-0.97, -0.38, -0.18]} scale={10}>
         <mesh geometry={nodes.Artemis.geometry} material={materials.Material__59} scale={0.01} />
       </group>
-      <group position={[2.59, 7.05, -10.66]} rotation={[-0.97, -0.38, -0.18]} scale={10}>
+      <group ref={aripi} position={[2.59, 7.05, -10.66]} rotation={[-0.97, -0.38, -0.18]} scale={10}>
         <group scale={0.01}>
           <mesh geometry={nodes.Object001_1.geometry} material={materials.Material_012} />
           <mesh geometry={nodes.Object001_2.geometry} material={materials.Material_013} />
