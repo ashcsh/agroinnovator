@@ -6,7 +6,7 @@ import logo from "./assets/logo.png";
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import Satelit from "./components/gltf/Artemis.jsx";
+import Satelit from "./components/gltf/Satelit.jsx";
 function App() {
   return (
     <>
@@ -20,12 +20,13 @@ function App() {
         </h1> */}
 
         <div className="earth">
-          <Canvas position={[0,0, 0]}>
+          <Canvas camera={{position: [2,-10,10], fov: 10, near: 1, eyeX: 10}} >
             <Suspense>
-              {/* <ambientLight position={[0, 0, 0]} intensity={1} /> */}
-              <directionalLight position={[100,100,100]} intensity={1}/>
-              <Satelit />
-              <OrbitControls enableRotate={true} enableZoom={true} />
+              <directionalLight position={[0,-5,0]} intensity={3}/>
+              <ambientLight position={[0, 0, 0]} intensity={0.5} />
+              {/* <pointLight position={[1000,-100,-1000]} intensity={1}/> */}
+              <Satelit/>
+              <OrbitControls enableRotate={false} enableZoom={false} />
             </Suspense>
           </Canvas>
         </div>
