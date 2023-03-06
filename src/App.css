@@ -37,4 +37,10 @@
     background-color: #272727;
 }
 
+.earth {
+  width: 100%;
+  height: 200px;
+  z-index: 0;
+}
+
 
