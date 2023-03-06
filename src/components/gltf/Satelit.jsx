@@ -7,7 +7,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function Satelit(props) {
-  const { nodes, materials } = useGLTF('/Satelit.glb')
+  const { nodes, materials } = useGLTF('/Sat.glb')
   const satelit = useRef()
   useFrame(() => {
     if (!satelit.current) {
@@ -42,4 +42,4 @@ export default function Satelit(props) {
   )
 }
 
-useGLTF.preload('/Satelit.glb')
+useGLTF.preload('/Sat.glb')
