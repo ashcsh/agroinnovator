@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
+import phonewave from "./assets/phonewave.svg";
+import logo from "./assets/logo.png";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <nav id="nav">
+        <img id="logo" src={logo} alt="logo" />
+      </nav>
+      <img className="wave" src={phonewave} alt="wave" />
+      <div className="section1"></div>
+      <div className="section2"></div>
+      <div className="section3"></div>
+      
+    </>
   );
 }
 
