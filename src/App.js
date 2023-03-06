@@ -13,11 +13,11 @@ function App() {
       <nav id="nav">
         <img id="logo" src={logo} alt="logo" />
       </nav>
-      <img className="wave" src={phonewave} alt="wave" />
+      {/* <img className="wave" src={phonewave} alt="wave" /> */}
       <div className="section1">
-        <h1 id="introtext">
+        {/* <h1 id="introtext">
           Sustinem dezvoltarea agriculturii sustenabile si performate.
-        </h1>
+        </h1> */}
 
         <div className="earth">
           <Canvas position={[0,0, 0]}>
